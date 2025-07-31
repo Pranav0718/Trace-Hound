@@ -1,0 +1,17 @@
+- id: B001
+  name: Encoded PowerShell
+  pattern: "(?i)powershell.*-enc"
+  technique: T1059.001
+  description: "Detects obfuscated PowerShell usage"
+
+- id: B002
+  name: Certutil Download
+  pattern: "(?i)certutil.*-urlcache"
+  technique: T1105
+  description: "Detects use of certutil to download remote content"
+
+- id: B003
+  name: Registry Run Key Persistence
+  pattern: "(?i)reg add .*\\\\Run"
+  technique: T1547.001
+  description: "Detects persistence via HKCU Run key"

