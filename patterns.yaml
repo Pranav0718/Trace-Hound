@@ -2,16 +2,118 @@
   name: Encoded PowerShell
   pattern: "(?i)powershell.*-enc"
   technique: T1059.001
-  description: "Detects obfuscated PowerShell usage"
+  tactic: Execution
+  mitre_link: https://attack.mitre.org/techniques/T1059/001/
+  description: "Detects obfuscated PowerShell usage via encoded command"
 
 - id: B002
   name: Certutil Download
   pattern: "(?i)certutil.*-urlcache"
   technique: T1105
-  description: "Detects use of certutil to download remote content"
+  tactic: Command and Control
+  mitre_link: https://attack.mitre.org/techniques/T1105/
+  description: "Detects use of certutil to download remote files"
 
 - id: B003
   name: Registry Run Key Persistence
   pattern: "(?i)reg add .*\\\\Run"
   technique: T1547.001
-  description: "Detects persistence via HKCU Run key"
+  tactic: Persistence
+  mitre_link: https://attack.mitre.org/techniques/T1547/001/
+  description: "Detects persistence via Run key modification"
+
+- id: B004
+  name: Procdump LSASS Dump
+  pattern: "(?i)procdump.*lsass"
+  technique: T1003.001
+  tactic: Credential Access
+  mitre_link: https://attack.mitre.org/techniques/T1003/001/
+  description: "Detects credential dumping via procdump.exe on LSASS"
+
+- id: B005
+  name: WMIC Remote Execution
+  pattern: "(?i)wmic.*process call create"
+  technique: T1047
+  tactic: Execution
+  mitre_link: https://attack.mitre.org/techniques/T1047/
+  description: "Detects remote execution using WMIC"
+
+- id: B006
+  name: Suspicious PowerShell Flags
+  pattern: "(?i)powershell.*-nop.*-w.*hidden.*-enc"
+  technique: T1059.001
+  tactic: Execution
+  mitre_link: https://attack.mitre.org/techniques/T1059/001/
+  description: "Detects stealthy PowerShell execution with hidden flags"
+
+- id: B007
+  name: Scheduled Task Creation
+  pattern: "(?i)schtasks.* /create"
+  technique: T1053.005
+  tactic: Persistence
+  mitre_link: https://attack.mitre.org/techniques/T1053/005/
+  description: "Detects task scheduling for persistence"
+
+- id: B008
+  name: RDP Session Hijacking
+  pattern: "(?i)tscon.exe.* /dest:console"
+  technique: T1563.002
+  tactic: Lateral Movement
+  mitre_link: https://attack.mitre.org/techniques/T1563/002/
+  description: "Detects local RDP session hijack via tscon.exe"
+
+- id: B009
+  name: Mimikatz Execution
+  pattern: "(?i)mimikatz.*log"
+  technique: T1003.001
+  tactic: Credential Access
+  mitre_link: https://attack.mitre.org/techniques/T1003/001/
+  description: "Detects use of Mimikatz for credential dumping"
+
+- id: B010
+  name: Net User Account Creation
+  pattern: "(?i)net user .* /add"
+  technique: T1136.001
+  tactic: Persistence
+  mitre_link: https://attack.mitre.org/techniques/T1136/001/
+  description: "Detects user account creation using net.exe"
+
+- id: B011
+  name: RDP Enabled via Registry
+  pattern: "(?i)reg add .*fDenyTSConnections.*0"
+  technique: T1021.001
+  tactic: Lateral Movement
+  mitre_link: https://attack.mitre.org/techniques/T1021/001/
+  description: "Detects enabling RDP via registry change"
+
+- id: B012
+  name: BITSAdmin Download
+  pattern: "(?i)bitsadmin.* /transfer.*http"
+  technique: T1105
+  tactic: Command and Control
+  mitre_link: https://attack.mitre.org/techniques/T1105/
+  description: "Detects remote download using BITSAdmin"
+
+- id: B013
+  name: Systeminfo Recon
+  pattern: "(?i)systeminfo"
+  technique: T1082
+  tactic: Discovery
+  mitre_link: https://attack.mitre.org/techniques/T1082/
+  description: "Detects use of systeminfo for OS discovery"
+
+- id: B014
+  name: Netstat for Network Discovery
+  pattern: "(?i)netstat.*-ano"
+  technique: T1049
+  tactic: Discovery
+  mitre_link: https://attack.mitre.org/techniques/T1049/
+  description: "Detects attacker network discovery via netstat"
+
+- id: B015
+  name: Exfiltration via PowerShell Upload
+  pattern: "(?i)Invoke-WebRequest.*-Method PUT"
+  technique: T1041
+  tactic: Exfiltration
+  mitre_link: https://attack.mitre.org/techniques/T1041/
+  description: "Detects file exfiltration via PowerShell PUT method"
