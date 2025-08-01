@@ -38,7 +38,7 @@
 
 ## 📦 Installation
 
-
+```bash
 git clone https://github.com/Pranav0718/Trace-Hound.git
 cd Trace-Hound
 pip install -r requirements.txt
