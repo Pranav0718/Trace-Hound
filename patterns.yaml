@@ -117,3 +117,12 @@
   tactic: Exfiltration
   mitre_link: https://attack.mitre.org/techniques/T1041/
   description: "Detects file exfiltration via PowerShell PUT method"
+
+  - id: B006
+  name: Volume Shadow Copy Creation
+  pattern: (?i)vssadmin.*create.*shadow
+  technique: T1003.003
+  tactic: Credential Access
+  mitre_link: https://attack.mitre.org/techniques/T1003/003/
+  description: Detects use of vssadmin to create shadow copies, often used in backup evasion and credential dumping.
+
