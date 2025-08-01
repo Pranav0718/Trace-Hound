@@ -30,11 +30,16 @@
 ---
 
 ## 🖼 Screenshot
+<img width="1306" height="484" alt="image" src="https://github.com/user-attachments/assets/64c91752-f71d-4b26-a6bf-03460b59a80d" />
 
-![TraceHound UI Screenshot](https://raw.githubusercontent.com/Pranav0718/Trace-Hound/main/screenshot.png)
+![TraceHound UI Screenshot]
 
 ---
 
 ## 📦 Installation
 
-```bash
+
+git clone https://github.com/Pranav0718/Trace-Hound.git
+cd Trace-Hound
+pip install -r requirements.txt
+streamlit run app.py
