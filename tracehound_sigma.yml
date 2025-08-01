@@ -1,0 +1,20 @@
+description: Auto-generated detection rule based on matched behaviors
+detection:
+  condition: selection
+  selection:
+    CommandLine|contains:
+    - (?i)powershell.*-enc
+    - (?i)certutil.*-urlcache
+    - (?i)reg add .*\\Run
+    - (?i)procdump.*lsass
+    - (?i)wmic.*process call create
+    - (?i)powershell.*-nop.*-w.*hidden.*-enc
+    - (?i)schtasks.* /create
+    - (?i)tscon.exe.* /dest:console
+id: TFC-B001-B002-B003-B004-B005-B006-B007-B008
+level: medium
+logsource:
+  product: windows
+  service: sysmon
+status: experimental
+title: TraceHound Detection - TFC-B001-B002-B003-B004-B005-B006-B007-B008
