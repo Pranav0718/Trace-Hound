@@ -124,6 +124,7 @@
   technique: T1003.003
   tactic: Credential Access
   mitre_link: https://attack.mitre.org/techniques/T1003/003/
-  description: Detects use of vssadmin to create shadow copies, often used in backup evasion and credential dumping.
+  description: Detects use of vssadmin to create shadow copies, often used in backup evasion and credential dumping
+
 
 
